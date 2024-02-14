@@ -54,7 +54,7 @@ body {
     border: 2px solid whitesmoke;
     color: whitesmoke;
     font-family: 'Poppins', sans-serif;
-    margin-top: 30 px;
+    margin-top: 30px;
 }
 
 input {
@@ -117,9 +117,33 @@ input:checked + label {
     align-items: center;
 }
 
+#ver-mapa {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ver-mapa button {
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid whitesmoke;
+    color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    margin: 5px;
+}
 
 @media (max-width: 630px) {     /*desde 0px hasta 560 px, Media querty se usa para pantallas de dispositivos pequeños*/ 
     .tarjetas, .tarjetas-ataques {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 300px) {     /*desde 0px hasta 560 px, Media querty se usa para pantallas de dispositivos pequeños*/ 
+    #ver-mapa div{
+        display: flex;
+        align-items: center;
         flex-direction: column;
     }
 }
