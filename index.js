@@ -3,7 +3,7 @@ const cors = require("cors")       // importamos CORS
 
 const app = express()
 
-app.use(express.static('public')) 
+app.use(express.static('docs')) // public
 app.use(cors())                   // activamos CORS
 app.use(express.json())           // activamos el formato JSON
 const jugadores = []
