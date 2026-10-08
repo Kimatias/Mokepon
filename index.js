@@ -36,7 +36,7 @@ app.get("/unirse", (req, res) => {                // creamos un endpoint para ob
 
     const id = `${Math.random()}`
     const jugador = new Jugador(id)
-    jugadores.push(jugador)
+    jugadores.push(jugador)                      // Agregamos cada jugador a la lista y agregamos su id
 
     res.setHeader("Access-Control-Allow-Origin", "*")
     res.send(id) 
@@ -97,6 +97,6 @@ app.get("/mokepon/:jugadorId/ataques", (req, res) => {
     })
 })
 
-app.listen('https://kimatias.github.io/Mokepon/', () => {
+app.listen('https://kimatias.github.io/Mokepon/', () => {     /*8080*/
     console.log("Servidor funcionando")
 })
