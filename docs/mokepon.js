@@ -156,7 +156,7 @@ function iniciarJuego(){
 }
 
 function unirseAlJuego(){
-    fetch("http://mokepon-lkma.onrender.com/unirse")
+    fetch("https://mokepon-lkma.onrender.com/unirse")
         .then(function(res) {
             console.log(res)
             if (res.ok) {
@@ -193,7 +193,7 @@ function seleccionarMascotaJugador(){
 }
 
 function seleccionarMokepon(mascotaJugador){
-    fetch(`http://mokepon-lkma.onrender.com/mokepon/${jugadorId}`, {   // parámetro de URL
+    fetch(`https://mokepon-lkma.onrender.com/mokepon/${jugadorId}`, {   // parámetro de URL
         method: "post",                                     // indicamos que el endpoint es un POST  
         headers: {                                         
             "Content-Type": "application/json"             // indicamos que estamos enviando un JSON
@@ -257,7 +257,7 @@ function secuenciaAtaque() {      //Acá vamos a hacer que solo sea posible hace
 }
 
 function enviarAtaques(){
-    fetch(`http://mokepon-lkma.onrender.com/mokepon/${jugadorId}/ataques`, {
+    fetch(`https://mokepon-lkma.onrender.com/mokepon/${jugadorId}/ataques`, {
         method: "post",
         headers: {
             "Content-Type": "application/json"
@@ -271,7 +271,7 @@ function enviarAtaques(){
 }
 
 function obtenerAtaques(){
-    fetch(`http://mokepon-lkma.onrender.com/mokepon/${enemigoId}/ataques`)
+    fetch(`https://mokepon-lkma.onrender.com/mokepon/${enemigoId}/ataques`)
         .then(function(res){
             if (res.ok) {
                 res.json()
@@ -407,7 +407,7 @@ function pintarCanvas() {
 }
 
 function enviarPosicion(x, y) {
-    fetch(`http://mokepon-lkma.onrender.com/mokepon/${jugadorId}/posicion`, {
+    fetch(`https://mokepon-lkma.onrender.com/mokepon/${jugadorId}/posicion`, {
         method: "post",
         headers: {
             "Content-Type": "application/json"
