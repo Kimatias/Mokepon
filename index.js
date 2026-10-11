@@ -3,10 +3,11 @@ const cors = require("cors")       // importamos CORS
 
 const app = express()
 
-app.use(express.static('docs')) // public
+app.use(express.static('docs'))   // antes tenia la carpeta public
 app.use(cors())                   // activamos CORS
 app.use(express.json())           // activamos el formato JSON
 const jugadores = []
+const PORT = process.env.PORT || 3000
 
 class Jugador {
     constructor (id) {
@@ -97,6 +98,6 @@ app.get("/mokepon/:jugadorId/ataques", (req, res) => {
     })
 })
 
-app.listen('https://kimatias.github.io/Mokepon/', () => {     /*8080*/
-    console.log("Servidor funcionando")
+app.listen(PORT, "0.0.0.0" , () => {    
+    console.log(`Servidor funcionando en el puerto ${PORT}`)
 })
