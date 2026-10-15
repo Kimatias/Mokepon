@@ -5,7 +5,7 @@ const app = express()
 
 app.use(express.static('docs'))   // antes tenia la carpeta public
 app.use(cors())                   // activamos CORS
-app.use(express.json())           // activamos el formato JSON
+app.use(express.json())           // activamos el formato JSON para habilitarlo durante las peticiones HTTP tipo POST
 const jugadores = []
 const PORT = process.env.PORT || 3000
 
@@ -13,7 +13,7 @@ class Jugador {
     constructor (id) {
         this.id = id
     }
-    asignarMokepon(mokepon){
+    asignarMokepon(mokepon){     // Método para asignar un mokepon
         this.mokepon = mokepon
     }
 
@@ -43,10 +43,10 @@ app.get("/unirse", (req, res) => {                // creamos un endpoint para ob
     res.send(id) 
 })
 
-app.post("/mokepon/:jugadorId", (req, res) => {   // creamos un endpoint de tipo POST
-    const jugadorId = req.params.jugadorId || ""  // capturamos parámetros de URL
-    const nombre = req.body.mokepon || ""         // capturamos el cuerpo de la solicitud
-    const mokepon = new Mokepon (nombre)
+app.post("/mokepon/:jugadorId", (req, res) => {   // creamos un endpoint de tipo POST (Una variable tipo parámetro se define con prefijo :)
+    const jugadorId = req.params.jugadorId || ""  // capturamos parámetros de URL extrayendo esta variable de la URL
+    const nombre = req.body.mokepon || ""         // capturamos la variable del cuerpo de la solicitud 
+    const mokepon = new Mokepon(nombre)
     
     const jugadorIndex = jugadores.findIndex((jugador) => jugadorId === jugador.id)
     

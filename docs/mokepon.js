@@ -182,7 +182,7 @@ function seleccionarMascotaJugador(){
         mascotaJugador = inputRatigueya.id
     } else {
         alert('Selecciona una mascota') 
-        return
+        /*return*/
     }
 
         sectionSeleccionarMascota.style.display = 'none'
