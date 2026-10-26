@@ -22,7 +22,7 @@ class Jugador {
         this.y = y
     }
 
-    asignarAtaques(ataques){
+    asignarAtaques(ataques){     /*Esta linea no esta en GitHub repo*/
         this.ataques = ataques
     }
 }
@@ -70,7 +70,7 @@ app.post("/mokepon/:jugadorId/posicion", (req, res) => {
         jugadores[jugadorIndex].actualizarPosicion(x, y)
     }
 
-    const enemigos = jugadores.filter((jugador) => jugadorId !== jugador.id)
+    const enemigos = jugadores.filter((jugador) => jugadorId !== jugador.id && jugador.mokepon)     /*Esta línea tampoco esta en GitHub Repo se agrego && jugador.mokepon*/
 
     res.send({
         enemigos
