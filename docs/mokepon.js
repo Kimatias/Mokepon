@@ -384,8 +384,6 @@ function crearMensajeFinal(resultadoFinal){
 
 function reiniciarJuego(){
     location.reload()
-    mokepones = []
-    mokeponesEnemigos = []
     ataqueJugador = []
     ataqueEnemigo = []
 }
