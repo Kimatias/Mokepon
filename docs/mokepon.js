@@ -384,8 +384,6 @@ function crearMensajeFinal(resultadoFinal){
 
 function reiniciarJuego(){
     location.reload()
-    ataqueJugador = []
-    ataqueEnemigo = []
 }
 
 function aleatorio(min, max){
