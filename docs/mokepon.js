@@ -384,6 +384,10 @@ function crearMensajeFinal(resultadoFinal){
 
 function reiniciarJuego(){
     location.reload()
+    mokepones = []
+    mokeponesEnemigos = []
+    ataqueJugador = []
+    ataqueEnemigo = []
 }
 
 function aleatorio(min, max){
@@ -424,7 +428,7 @@ function enviarPosicion(x, y) {
                     console.log(enemigos) 
                     mokeponesEnemigos = enemigos.map(function (enemigo){
                         let mokeponEnemigo = null
-                        const mokeponNombre = enemigo.mokepon.nombre || ""  //si ocurre algun problema con el servidor nos devolverá una cadena vacía
+                        const mokeponNombre = enemigo.mokepon?.nombre || ""  //si ocurre algun problema con el servidor nos devolverá una cadena vacía, ? evita el acceso a .nombre cuando mokepon no existe
                         if (mokeponNombre == "Hipodoge"){
                             mokeponEnemigo = new Mokepon('Hipodoge','./assets/mokepons_mokepon_hipodoge_attack.webp', 5, './assets/hipodoge.webp', enemigo.id)
                         } else if (mokeponNombre == "Capipepo"){

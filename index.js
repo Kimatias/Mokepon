@@ -93,6 +93,11 @@ app.post("/mokepon/:jugadorId/ataques", (req, res) => {
 app.get("/mokepon/:jugadorId/ataques", (req, res) => {
     const jugadorId = req.params.jugadorId || ""  
     const jugador = jugadores.find((jugador) => jugador.id === jugadorId)
+
+    if (!jugador) {                                  // Se añadió para que el servidor no falle cuando el id no corresponda a un jugador existente
+        return res.status(404).send({ataques:[]})
+    }
+
     res.send({
         ataques: jugador.ataques || []
     })
